@@ -1,0 +1,22 @@
+{
+  "name": "kentucky-boulderer",
+  "version": "1.0.0",
+  "description": "kentuckyboulderer.com is a redesign of kentuckyboulderer.wordpress.com with new data driven features like...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesdevclimb/Kentucky-Boulderer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wesdevclimb/Kentucky-Boulderer/issues"
+  },
+  "homepage": "https://github.com/wesdevclimb/Kentucky-Boulderer#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
