@@ -2,7 +2,7 @@
   "name": "kentucky-boulderer",
   "version": "1.0.0",
   "description": "kentuckyboulderer.com is a redesign of kentuckyboulderer.wordpress.com with new data driven features like...",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,11 +17,12 @@
   },
   "homepage": "https://github.com/wesdevclimb/Kentucky-Boulderer#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "angular": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.5"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-uglify": "^2.0.0"
+    "webpack": "^1.13.3"
   }
 }
