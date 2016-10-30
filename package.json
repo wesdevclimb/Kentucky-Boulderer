@@ -4,7 +4,7 @@
   "description": "kentuckyboulderer.com is a redesign of kentuckyboulderer.wordpress.com with new data driven features like...",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
     "mongoose": "^4.6.5"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
     "webpack": "^1.13.3"
   }
 }

@@ -16,3 +16,5 @@ areas.forEach(function(area, index) {
     }
   });
 });
+
+module.exports = areas;
