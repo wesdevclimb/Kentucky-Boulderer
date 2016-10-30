@@ -8,8 +8,10 @@ var ProblemSchema = new mongoose.Schema({
   description: String,
   firstAscent: {
     ascentionist: String,
-    dateSent: { type: Date }
+    dateSent: Date,
   },
+  boulder: String,
+  area: String,
   dateSubmitted: { type: Date, default: Date.now },
   meta : {
     likes: Number,
@@ -18,3 +20,7 @@ var ProblemSchema = new mongoose.Schema({
   },
   comments: [{username: String, body: String, date: Date}]
 });
+
+var Problem = mongoose.model('Problem', ProblemSchema);
+
+module.exports = Problem;
