@@ -1,9 +1,16 @@
+'use strict';
+
 var express = require('express');
+var parser = require('body-parser');
+var router = require('./api');
+
 var app = express();
-var PORT = 3000;
+
+require('./database.js');
+require('./seed.js');
 
 app.use('/', express.static('public'));
 
-app.listen(PORT, function(){
-  console.log("Frontend server is running on port " + PORT);
+app.listen(3000, function(){
+  console.log("Frontend server is running on port 3000");
 });

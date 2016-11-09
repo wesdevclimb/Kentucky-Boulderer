@@ -1,24 +1,20 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var ProblemSchema = new mongoose.Schema({
+var ProblemSchema = new Schema({
   name: String,
-  grade: String,
+  grade: Number,
   description: String,
   firstAscent: {
     ascentionist: String,
-    dateSent: Date,
+    date: Date,
   },
-  boulder: String,
-  area: String,
+  parentBoulder: { type: Schema.Types.ObjectId, ref: 'Boulder' },
+  parentArea: { type: Schema.Types.ObjectId, ref: 'Area' },
   dateSubmitted: { type: Date, default: Date.now },
-  meta : {
-    likes: Number,
-    stars: Number,
-    gradeVotes: String
-  },
-  comments: [{username: String, body: String, date: Date}]
+  comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]
 });
 
 var Problem = mongoose.model('Problem', ProblemSchema);
