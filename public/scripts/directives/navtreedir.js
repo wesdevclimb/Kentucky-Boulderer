@@ -4,5 +4,5 @@ angular.module('guidebookApp')
     templateUrl: 'templates/navtree.html',
     replace: true,
     controller: 'navtreeCtrl'
-  }
+  };
 });
