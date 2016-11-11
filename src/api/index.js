@@ -15,8 +15,8 @@ router.get('/areas', function(req, res) {
     if(err) {
       return res.status(500).json({message: err.message});
     }
-    //res.json({areas: areas});
-    result.areas = areas;
+    res.json({areas: areas});
+    // result.areas = areas;
   });
 
   res.json(result);
