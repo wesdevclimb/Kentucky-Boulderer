@@ -1,12 +1,23 @@
 <div>
   <h3>Bouldering Areas</h3>
-  <ul ng-repeat="area in areas">
-    <li>{{area.name}}</li>
-    <ul ng-repeat="boulder in area.boulders">
-      <li>{{boulder.name}}</li>
-      <ul ng-repeat="problem in area.boulder.problems">
-        <li>{{problem.name}} {{problem.grade}}</li>
+  <style>
+    li:hover{
+    cursor: pointer;
+    }
+  </style>
+  <ul>
+    <li ng-repeat="area in areas">
+      <span ng-click="showChildren(area)">{{area.name}}</span>
+      <ul>
+        <li ng-repeat="boulder in area.boulders" ng-show="area.active">
+          <span ng-click="showChildren(boulder)">{{boulder.name}}</span>
+          <ul>
+            <li ng-repeat="problem in boulder.problems" ng-show="boulder.active" ng-show="area.active">
+              <span>{{problem.name}} (V{{problem.grade}})</span>
+            </li>
+          </ul>
+        </li>
       </ul>
-    </ul>
+    </li>
   </ul>
 </div>
