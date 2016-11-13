@@ -1,10 +1,9 @@
-'use strict';
-
 angular.module('guidebookApp')
 .controller('navtreeCtrl', function($scope, dataService) {
 
     dataService.getAreas(function(res) {
       var data = res.data;
+
       console.log(data);
 
       var filteredData = [];
@@ -17,9 +16,14 @@ angular.module('guidebookApp')
         data.boulders.forEach(function(boulder) {
           if(area._id === boulder.parentArea) {
             area.boulders.push(boulder);
-          } else {
-            console.log("your plan did not work asshole");
           }
+        });
+        area.boulders.forEach(function(boulder) {
+          data.problems.forEach(function(problem) {
+            if(boulder._id === problem.parentBoulder) {
+              boulder.problems.push(problem);
+            }
+          });
         });
       });
 

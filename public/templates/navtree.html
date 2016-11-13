@@ -1,9 +1,12 @@
 <div>
   <h3>Bouldering Areas</h3>
-  <div ng-repeat="area in areas">
-    <h4>{{area.name}}</h4>
+  <ul ng-repeat="area in areas">
+    <li>{{area.name}}</li>
     <ul ng-repeat="boulder in area.boulders">
       <li>{{boulder.name}}</li>
+      <ul ng-repeat="problem in area.boulder.problems">
+        <li>{{problem.name}} {{problem.grade}}</li>
+      </ul>
     </ul>
-  </div
+  </ul>
 </div>
