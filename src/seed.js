@@ -5,6 +5,15 @@ var Boulder = require('./models/boulder.js');
 var Problem = require('./models/problem.js');
 var Comment = require('./models/comment.js');
 
+
+
+
+//--------------THIS WHOLE SEED CAN BE REWORKED TO BE MORE EFFICIENT
+
+
+
+
+
 var areas = [
   {
     name: "The Cove",

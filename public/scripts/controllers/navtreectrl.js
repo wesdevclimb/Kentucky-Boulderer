@@ -1,5 +1,5 @@
 angular.module('guidebookApp')
-.controller('navtreeCtrl', function($scope, dataService) {
+.controller('navtreectrl', function($scope, dataService) {
 //------------------Clean up the dataService.getAreas method by creating a function on the controller that filters the data retrieved by the data service.
 //------------------$scope.filterData = function(rawData) {return filteredData};
 //------------------Call the filterData function in the controller so that it looks nice and is easily read.
@@ -32,7 +32,7 @@ angular.module('guidebookApp')
     });
 
     $scope.showChildren = function(item) {
-      item.active = !item.active;      
+      item.active = !item.active;
     };
 
 });

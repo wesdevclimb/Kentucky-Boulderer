@@ -2,18 +2,26 @@
   <h3>Bouldering Areas</h3>
   <style>
     li:hover{
-    cursor: pointer;
+      cursor: pointer;
+    }
+    ul.navtreeul{
+      list-style-type: none;
+    }
+    .navtreebutton{
+      color: blue;
     }
   </style>
-  <ul>
+  <ul class="navtreeul">
     <li ng-repeat="area in areas">
-      <span ng-click="showChildren(area)">{{area.name}}</span>
-      <ul>
+      <button class="navtreebutton" ng-click="showChildren(area)">+</button>
+      <a href=""><span>{{area.name}}</span><a/>
+      <ul class="navtreeul">
         <li ng-repeat="boulder in area.boulders" ng-show="area.active">
-          <span ng-click="showChildren(boulder)">{{boulder.name}}</span>
-          <ul>
+          <button class="navtreebutton" ng-click="showChildren(boulder)">+</button>
+          <a href=""><span>{{boulder.name}}</span></a>
+          <ul class="navtreeul">
             <li ng-repeat="problem in boulder.problems" ng-show="boulder.active" ng-show="area.active">
-              <span>{{problem.name}} (V{{problem.grade}})</span>
+              <a href=""><span>{{problem.name}} (V{{problem.grade}})</span></a>
             </li>
           </ul>
         </li>
