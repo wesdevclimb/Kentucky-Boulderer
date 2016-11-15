@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var Area = require('../models/area.js');
 var Boulder = require('../models/boulder.js');
@@ -52,7 +54,7 @@ var router = express.Router();
 //   should print to console "area1 has 2 boulders."
 // });
 
-//------------- RETRIEVES OBJECTS FROM THE TOP TO BOTTOM
+//------------- RETRIEVES OBJECTS FROM THE TOP OF HIERARCHY TO BOTTOM
 router.get('/areas', function(req, res) {
   var raw = {};
   Area.find({}, function(err, areas) {
@@ -76,34 +78,15 @@ router.get('/areas', function(req, res) {
   });
 });
 
-//------------- RETRIEVES OBJECTS FROM THE BOTTOM TO TOP USING A QUERY BUILDER
-// router.get('/areas', function(req, res) {
-//   var result = [];
-//   var query = Problem.find({}).populate({
-//     path: "parentBoulder",
-//     populate: {
-//       path: "parentArea"
-//     }
-//   });
-//   query.exec(function(err, areas) {
-//     if(err) {
-//       return res.status(500).json({message: err.message});
-//     }
-//     areas.forEach(function(area) {
-//       result.push(area);
-//     });
-//     res.json(result);
-//   });
-// });
-
-//------------- RETURN A LIST OF AREAS
-// router.get('/areas', function(req, res) {
-//   Area.find({}, function(err, areas) {
-//     if(err) {
-//       return res.status(500).json({message: err.message});
-//     }
-//     res.json({areas: areas});
-//   });
-// });
+//-------- SET UP DIFFERENT POST ROUTES FOR EACH KIND OF OBJECT
+router.post('/areas', function(req, res) {
+  var area = req.body;
+  Area.create(area, function(err, area) {
+    if(err) {
+      return res.status(500).json({err: err.message});
+    }
+    res.json({'area': area, message: 'Area Created'});
+  });
+});
 
 module.exports = router;
