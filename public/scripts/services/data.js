@@ -3,4 +3,6 @@ angular.module('guidebookApp')
   this.getAreas = function(cb) {
     $http.get('/api/areas').then(cb);
   };
+
+
 });
