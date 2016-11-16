@@ -1,11 +1,11 @@
 angular.module('guidebookApp')
-.controller('navtreectrl', function($scope, dataService) {
-//------------------Clean up the dataService.getAreas method by creating a function on the controller that filters the data retrieved by the data service.
-//------------------$scope.filterData = function(rawData) {return filteredData};
-//------------------Call the filterData function in the controller so that it looks nice and is easily read.
+.controller('navtreeCtrl', function($scope, dataService) {
+//------------Clean up the dataService.getAreas method by creating a function on the controller that filters the data retrieved by the data service.
+//------------$scope.filterData = function(rawData) {return filteredData};
+//------------Call the filterData function in the controller so that it looks nice and is easily read.
     dataService.getAreas(function(res) {
-      var data = res.data;
 
+      var data = res.data;
       var filteredData = [];
       data.areas.forEach(function(area) {
         filteredData.push(area);
@@ -24,8 +24,6 @@ angular.module('guidebookApp')
           });
         });
       });
-
-      console.log(filteredData);
 
       $scope.areas = filteredData;
 

@@ -6,17 +6,21 @@
   </head>
   <body>
     <h1>Kentucky Boulderers</h1>
-    <div ng-controller="navtreectrl">
+    <div ng-controller="navtreeCtrl">
       <navtreedir></navtreedir>
     </div>
-    <div ng-controller="submitctrl">
-      <submitdir></submitdir>
+    <div id="main">
+      <div ng-view></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
     <script type="text/javascript" src='app.js'></script>
     <script type="text/javascript" src="scripts/controllers/navtreectrl.js"></script>
     <script type="text/javascript" src="scripts/directives/navtreedir.js"></script>
-    <script type="text/javascript" src="scripts/controllers/submitctrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/submitareactrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/submitboulderctrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/submitproblemctrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/homectrl.js"></script>
     <script type="text/javascript" src="scripts/directives/submitdir.js"></script>
     <script type="text/javascript" src="scripts/services/data.js"></script>
   </body>

@@ -3,6 +3,6 @@ angular.module('guidebookApp')
   return {
     templateUrl: 'templates/navtree.html',
     replace: true,
-    controller: 'navtreectrl'
+    controller: 'navtreeCtrl'
   };
 });
