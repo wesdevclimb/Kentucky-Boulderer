@@ -79,13 +79,33 @@ router.get('/areas', function(req, res) {
 });
 
 //-------- SET UP DIFFERENT POST ROUTES FOR EACH KIND OF OBJECT
-router.post('/areas', function(req, res) {
+router.post('/areas/submitarea', function(req, res) {
   var area = req.body;
   Area.create(area, function(err, area) {
     if(err) {
       return res.status(500).json({err: err.message});
     }
     res.json({'area': area, message: 'Area Created'});
+  });
+});
+
+router.post('/areas/submitboulder', function(req, res) {
+  var boulder = req.body;
+  Boulder.create(boulder, function(err, boulder) {
+    if(err) {
+      return res.status(500).json({err: err.message});
+    }
+    res.json({'boulder': boulder, message: 'Boulder Created'});
+  });
+});
+
+router.post('/areas/submitproblem', function(req, res) {
+  var problem = req.body;
+  Problem.create(problem, function(err, problem) {
+    if(err) {
+      return res.status(500).json({err: err.message});
+    }
+    res.json({'problem': problem, message: 'Problem Created'});
   });
 });
 

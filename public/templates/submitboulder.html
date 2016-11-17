@@ -1,4 +1,9 @@
 <div>
-  {{message}}
+  <h3>Submit a new boulder</h3>
+  <div>
+    <select>
+      <option ng-repeat="area in areas" value="{{area._id}}">{{area.name}}</option>
+    </select>
+  </div>
   <a href="/#/"><button type="button">Cancel</button></a>
 </div>

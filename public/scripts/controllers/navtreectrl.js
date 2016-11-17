@@ -25,6 +25,7 @@ angular.module('guidebookApp')
       });
     });
     $scope.areas = filteredData;
+    console.log($scope.areas);
   });
 
   $scope.showChildren = function(item) {
