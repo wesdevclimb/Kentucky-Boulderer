@@ -26,5 +26,15 @@ angular.module('guidebookApp')
 
   $scope.master = {};
 
+  $scope.update = function(area) {
+    $scope.master = angular.copy(area);
+    console.log($scope.master);
+  };
+
+  $scope.reset = function() {
+    $scope.area = angular.copy($scope.master);
+  };
+
+  $scope.saveNewArea = dataService.saveNewArea;
 
 });

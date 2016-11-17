@@ -6,6 +6,7 @@ angular.module('guidebookApp')
   dataService.getAreas(
     function(res) {
     var data = res.data;
+    console.log(data);
     var filteredData = [];
     data.areas.forEach(function(area) {
       filteredData.push(area);

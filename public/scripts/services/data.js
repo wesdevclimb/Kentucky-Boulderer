@@ -9,4 +9,8 @@ angular.module('guidebookApp')
     $http.post('/api/areas/submitarea', area);
   };
 
+  this.saveNewBoulder = function(boudler) {
+    $http.post('/api/areas/submitboulder', boulder);
+  };
+
 });

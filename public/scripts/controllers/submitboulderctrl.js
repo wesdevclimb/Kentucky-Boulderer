@@ -25,6 +25,21 @@ angular.module('guidebookApp')
     $scope.areas = filteredData;
   });
 
-  $scope.message = "This is the sumbit boulder template";
+  $scope.master = {};
+
+  $scope.update = function(boulder) {
+    $scope.master = angular.copy(boulder);
+    console.log($scope.master);
+  };
+
+  $scope.reset = function() {
+    $scope.boulder = angular.copy($scope.master);
+  };
+
+  $scope.saveNewBoulder = dataService.saveNewBoulder;
+
+  $scope.logResult = function(boulder) {
+    console.log(boulder);
+  };
 
 });

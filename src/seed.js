@@ -162,7 +162,7 @@ area571Boulders.forEach(function(boulder, index) {
       Boulder.create({
         name: boulder.name,
         description: boulder.description,
-        parentArea: "5822874ff8c5f11debc4f5d9"
+        parentArea: "0001"
       });
     }
   });
