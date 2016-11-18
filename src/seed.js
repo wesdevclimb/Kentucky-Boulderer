@@ -9,7 +9,8 @@ var Comment = require('./models/comment.js');
 
 
 //--------------THIS WHOLE SEED CAN BE REWORKED TO BE MORE EFFICIENT
-
+//--------------I MADE THE MISTAKE OF LOADING MY SEED BOULDERS AND SEED PROBLEMS WITH SPECIFIC ID'S
+//--------------THIS PREVENTS ANY OF THE DATA BEING NESTED INSIDE THE FINAL filteredData object in my dataService @public/scripts/services/data.js
 
 
 

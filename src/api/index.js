@@ -8,8 +8,16 @@ var Comment = require('../models/comment.js');
 
 var router = express.Router();
 
-// This query will gather all elements in the db with only their id, name, grade, and parent id fields selected.
-// The array of documents will be sent to the dataservice to be assembled into a valid json array
+// This query will gather all elements in the db with only their id, name, grade, and parent id fields selected and place each collection inside of an array that is a property of an object
+// EXAMPLE
+// var response.data = {
+//  areas = [{name: "area1", description: "lorem ipsum blah blah blah", boulders: []}],
+//  boulders = [{name: boulder1, more keys}, {name: "boulder2", more keys...}],
+//  problems = [{name: "problem1"}, {name: problem2}]
+// }
+
+// The array of documents will be sent to the dataservice to be assembled into a valid json array so that each item can be iteratted over and sorted by ID
+
 // var result should look something like this...
 
 // var result = [

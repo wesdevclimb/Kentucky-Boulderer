@@ -1,6 +1,8 @@
 angular.module('guidebookApp')
-.controller('submitProblemCtrl', function($scope, $route, dataService) {
-
+.controller('submitProblemCtrl', function($scope, $window, dataService) {
+  //------------Clean up the dataService.getAreas method by creating a function on the controller that filters the data retrieved by the data service.
+  //------------$scope.filterData = function(rawData) {return filteredData};
+  //------------Call the filterData function in the controller so that it looks nice and is easily read.
   dataService.getAreas(
     function(res) {
     var data = res.data;
@@ -35,8 +37,8 @@ angular.module('guidebookApp')
     console.log(problem);
   };
 
-  $scope.reloadRoute = function () {
-    $route.reload();
+  $scope.reloadRoute = function() {
+    $window.location.reload();
   };
 
 });
