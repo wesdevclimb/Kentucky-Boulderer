@@ -1,5 +1,5 @@
 angular.module('guidebookApp')
-.controller('submitAreaCtrl', function($scope, dataService) {
+.controller('submitAreaCtrl', function($scope, $route, dataService) {
   dataService.getAreas(
     function(res) {
     var data = res.data;
@@ -36,5 +36,13 @@ angular.module('guidebookApp')
   };
 
   $scope.saveNewArea = dataService.saveNewArea;
+
+  $scope.logResult = function(area) {
+    console.log(area);
+  };
+
+  $scope.reloadRoute = function () {
+    $route.reload();
+  };
 
 });

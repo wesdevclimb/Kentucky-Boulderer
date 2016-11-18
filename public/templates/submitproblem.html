@@ -1,9 +1,17 @@
 <div>
-  <h3>Submit a new problem</h3>
-  <div>
-    <select>
-      <option ng-repeat="area in areas" value="{{area._id}}">{{area.name}}</option>
-    </select>
-  </div>
+  <h3>Submit a New Problem</h3>
+  <label for="parentAreaSelect">Parent Area: </label>
+  <select class="" name="parentAreaSelect" ng-options="area.boulders as area.name for area in areas track by area._id" ng-model="parentAreaBoulders">
+  </select>
+  <label for="parentBoulderSelect">Parent Boulder: </label>
+  <select class="" name="parentBoulderSelect" ng-options="boulder._id as boulder.name for boulder in parentAreaBoulders track by boulder._id" ng-model="problem.parentBoulder">
+  </select>
+  <label for="name">Problem Name: </label>
+  <input type="text" name="name" placeholder="Enter a name here" ng-model="problem.name" required>
+  <label for="grade">Problem Grade: </label>
+  <input type="number" min="0" max="18" name="grade" ng-model="problem.grade" required>
+  <label for="description">Problem Description: </label>
+  <input type="text" name="description" placeholder="Enter a description here" ng-model="problem.description" required>
+  <input type="submit" ng-click="logResult(problem); saveNewProblem(problem); reloadRoute()">
   <a href="/#/"><button type="button">Cancel</button></a>
 </div>

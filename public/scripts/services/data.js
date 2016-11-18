@@ -9,8 +9,12 @@ angular.module('guidebookApp')
     $http.post('/api/areas/submitarea', area);
   };
 
-  this.saveNewBoulder = function(boudler) {
+  this.saveNewBoulder = function(boulder) {
     $http.post('/api/areas/submitboulder', boulder);
+  };
+
+  this.saveNewProblem = function(problem) {
+    $http.post('/api/areas/submitproblem', problem);
   };
 
 });

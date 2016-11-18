@@ -1,5 +1,5 @@
 angular.module('guidebookApp')
-.controller('submitProblemCtrl', function($scope, dataService) {
+.controller('submitProblemCtrl', function($scope, $route, dataService) {
 
   dataService.getAreas(
     function(res) {
@@ -25,6 +25,18 @@ angular.module('guidebookApp')
     $scope.areas = filteredData;
   });
 
-  $scope.message = "This is the submit problem template";
+  $scope.problem = {};
+
+  $scope.parentAreaBoulders = [];
+
+  $scope.saveNewProblem = dataService.saveNewProblem;
+
+  $scope.logResult = function(problem) {
+    console.log(problem);
+  };
+
+  $scope.reloadRoute = function () {
+    $route.reload();
+  };
 
 });

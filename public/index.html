@@ -2,14 +2,30 @@
 <html ng-app="guidebookApp">
   <head>
     <title>Kentucky Boulderer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" media="screen" title="no title">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/main.css" media="screen" title="no title">
   </head>
   <body>
-    <h1>Kentucky Boulderers</h1>
-    <div ng-controller="navtreeCtrl">
-      <navtreedir></navtreedir>
+    <nav class="navbar-static-top">
+      <div class="container">
+        <h1>Kentucky Boulderers</h1>
+        <div role="navigation">
+          <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="/#/">Home</a></li>
+            <li role="presentation"><a href="/#/submitarea">Submit New Area</a></li>
+            <li role="presentation"><a href="/#/submitboulder">Submit New Boulder</a></li>
+            <li role="presentation"><a href="/#/submitproblem">Submit New Problem</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div ng-controller="navtreeCtrl">
+        <navtreedir></navtreedir>
+      </div>
     </div>
-    <div id="main">
+    <div class="container">
       <div ng-view></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>

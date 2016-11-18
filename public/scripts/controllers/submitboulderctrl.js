@@ -1,5 +1,5 @@
 angular.module('guidebookApp')
-.controller('submitBoulderCtrl', function($scope, dataService) {
+.controller('submitBoulderCtrl', function($scope, $route, dataService) {
 
   dataService.getAreas(
     function(res) {
@@ -25,21 +25,16 @@ angular.module('guidebookApp')
     $scope.areas = filteredData;
   });
 
-  $scope.master = {};
-
-  $scope.update = function(boulder) {
-    $scope.master = angular.copy(boulder);
-    console.log($scope.master);
-  };
-
-  $scope.reset = function() {
-    $scope.boulder = angular.copy($scope.master);
-  };
+  $scope.boulder = {};
 
   $scope.saveNewBoulder = dataService.saveNewBoulder;
 
   $scope.logResult = function(boulder) {
     console.log(boulder);
+  };
+
+  $scope.reloadRoute = function () {
+    $route.reload();
   };
 
 });
