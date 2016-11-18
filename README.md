@@ -1,15 +1,36 @@
 # Kentucky-Boulderer
-### A modern, data  driven guide book application for bouldering in Kentucky
+## My Code Louisville FSJS Project
 
-kentuckyboulderer.com is a redesign of kentuckyboulderer.wordpress.com with new data driven features such as: 
+My project is an application to help my friends and I record all of the bouldering that we do in Kentucky, as well as make the information public and accessible to anyone interested in bouldering here. My application presents all of the data from the database in a navigation tree that represents a nested JSON object. I was going to include dynamic pages for each object in the tree but I ran out of time.
 
-- User authentication and authorization that will...
-  1. Allow unauthenticated users to view website content
-  2. Allow authorized users to submit new content. i.e. new boulder problems, new boulders and clusters, add comments on specific problems, as well as vote on grade and quality of specific boulder problems.
-  3. Allow an administrator to...
-    - Authorize new content before being submitted to the application
-    - Remove content as needed
-- Provide fast and responsive access to information on bouldering areas
-- Have a dynamically updating homepage with various information such as...
-  - New and important announcements
-  - Recently added boulder problems     
+If you're not familiar with bouldering, it's essentially a sub-discipline of rock climbing in which you climb smaller boulders instead of towering cliffs.
+
+If you have like 10 minutes, here is a link to a really [cool bouldering montage video.](https://vimeo.com/38586136)
+
+I had some lofty goals for my project and I think that in the next few weeks, I'll still be trying to achieve them. There are so many features I still want to include but I had to complete my graduation requirements in time before I could pursue developing those. My project, unfortunately, only does the bare minimum. It only writes to and reads the database... for now.
+
+## Important Info and Known Bugs
+#### Known Bugs
+##### *The Refresh Bug*
+There is some very fragile code in my angular application that uses nested forEach() loops to scaffold my data. Occasionally the data will fail to load and nothing with appear inside all, or some, of the following elements...
+- The navigation tree
+- Any of the select menu drop downs
+
+If you refresh the page, it should work okay. If it doesn't work again, refresh again. You can see why I called it the *Refresh Bug* I decided to use this method because I couldn't figure out how to use Angular promises or Mongoose promises in time for my project to make the due date so I just rolled with the punches.
+
+
+#### Info
+My project has a very STRICT object hierarchy. Which goes as follows...
+
+Bouldering Area > Individual Boulders > Boulder Problems
+
+My application can submit an object at any level in the tree but all of its parent objects **HAVE TO EXIST.**
+
+There are two Bouldering Areas already seeded in the database, but there are **no seeded Individual Boulders or Boulder Problems.** In order to create a Boulder Problem, you first have to create an Individual Boulder, which then allows a Boulder Problem to be created.
+
+## Instructions to Run
+- Go to root directory of the project (Kentucky-Boulderer)
+- Run ‘npm install’ to install necessary packages
+- Run ‘mongod’ to start mongo service
+- Run ‘node src/app.js’ while in the route of Kentucky-Boulderer to begin the app server process
+- Open a localhost window to port 3000.
