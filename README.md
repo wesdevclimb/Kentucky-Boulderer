@@ -1,7 +1,9 @@
 # Kentucky-Boulderer
 ## My Code Louisville FSJS Project
 
-My project is an application to help my friends and I record all of the bouldering that we do in Kentucky, as well as make the information public and accessible to anyone interested in bouldering here. My application presents all of the data from the database in a navigation tree that represents a nested JSON object. I was going to include dynamic pages for each object in the tree but I ran out of time.
+My project is an application to help my friends and I record all of the bouldering that we do in Kentucky, as well as make the information public and accessible to anyone interested in bouldering here. My application presents all of the data from the database in a navigation tree that represents a nested JSON object.
+**You have to click on the plus button to reveal an object's children.**
+I was going to include dynamic pages for each object in the tree but I ran out of time.
 
 If you're not familiar with bouldering, it's essentially a sub-discipline of rock climbing in which you climb smaller boulders instead of towering cliffs.
 
