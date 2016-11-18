@@ -21,12 +21,20 @@
       </div>
     </nav>
     <div class="container">
-      <div ng-controller="navtreeCtrl">
-        <navtreedir></navtreedir>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="container">
+            <div ng-controller="navtreeCtrl">
+              <navtreedir></navtreedir>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="container">
+            <div ng-view></div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="container">
-      <div ng-view></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
