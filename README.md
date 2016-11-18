@@ -29,6 +29,7 @@ Bouldering Area > Individual Boulders > Boulder Problems
 My application can submit an object at any level in the tree but all of its parent objects **HAVE TO EXIST.**
 
 There are two Bouldering Areas already seeded in the database, but there are **no seeded Individual Boulders or Boulder Problems.** In order to create a Boulder Problem, you first have to create an Individual Boulder, which then allows a Boulder Problem to be created.
+**You have to click on the plus button to reveal an object's children.**
 
 ## Instructions to Run
 - Go to root directory of the project (Kentucky-Boulderer)
